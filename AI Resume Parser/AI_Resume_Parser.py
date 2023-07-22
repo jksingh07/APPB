@@ -19,7 +19,7 @@ def extract_text_from_pdf(file_path):
         return text
 
 def extract_resume_details(input_text):
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     prompt = '''
     Extract the following details from the given resume JSON:
