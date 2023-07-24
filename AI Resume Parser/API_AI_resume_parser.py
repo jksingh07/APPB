@@ -17,7 +17,7 @@ def parse_resume():
         return jsonify({'error': 'No file found in the request'}), 400
 
     file = request.files['file']
-    file.save('resume_new.pdf')
+    file.save('resume_new1.pdf')
 
     # Read the contents of the file
     file_contents = file.read()
@@ -25,10 +25,11 @@ def parse_resume():
     # Check if the file is a PDF
     if file.filename.endswith('.pdf'):
         try:
-            input_text = extract_text_from_pdf('resume_new.pdf')
+            input_text = extract_text_from_pdf('resume_new1.pdf')
 
             # Process the extracted text and generate the JSON output
-            json_output = resume_parser_json(input_text)
+            response = resume_parser_openai(input_text)
+            json_output = resume_parser_json(response)
             
             return jsonify(json_output), 200
         except Exception as e:

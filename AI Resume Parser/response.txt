@@ -1,0 +1,52 @@
+Contact Info:
+- Email: pahwar@uwindsor.ca
+
+Intro Info:
+- Name: Rishabh Pahwa
+- Status: Senior Software Engineer
+
+About Info:
+- First Paragraph: With over 3 years of experience in SAP ERP projects for esteemed clients such as Airbus, I am a skilled and adaptable software engineer. I specialize in Agile environments and have a strong ability to deliver software design, testing, and development solutions. My experience extends to a variety of technologies, including Android App development, Web development, Machine Learning, Linux administration, and Bash Scripting.
+- Second Paragraph: I am known for my excellent communication and teamwork skills, which have been honed through my collaboration with clients, colleagues, and project team members. I am driven by a passion for driving innovation and enhancing business performance through comprehensive software solutions.
+
+Summary: Skilled and adaptable software engineer with over 3 years of experience in SAP ERP projects, specializing in Agile environments and delivering software design, testing, and development solutions.
+
+Company:
+- Name: Sopra Steria
+- Position: Senior Software Engineer
+- Duration: Aug 2019 - Aug 2022
+- Description: Managed a critical project for Airbus for nearly 3 years as the technical owner, developing and maintaining an SAP WebDynpro based portal for seamless technical data submission by the client's part suppliers. Mentored and trained a team of 3 junior software engineers, improving their understanding of the technology stack and best practices. Demonstrated strong reliability in addressing production incidents and change requests while maintaining in-depth functional knowledge of the application and technical expertise in key areas.
+
+Project Heading:
+- Title: ZeroWaste
+- Project Description: Collaborated with a team of 8 students to create and present a solution addressing common challenges in household waste management, including forgetfulness, e-waste recycling, kitchen waste disposal, automation, and mis-recycling.
+- Technologies: HTML, CSS, JavaScript, Angular, MongoDB, Docker
+
+Skills:
+- Java
+- C
+- C++
+- ABAP
+- JavaScript
+- Python
+- Bash Scripting
+- Linux
+- macOS
+- Windows
+- MySQL
+- Oracle SQL
+- MS-SQL Server
+- MongoDB
+- PowerPoint
+- Excel
+- MS Visio
+- Tableau
+- Git
+- Service Now
+- JIRA
+- Confluence
+- HP QC
+- Android Studio
+- Docker
+- Jenkins
+- MS Office
