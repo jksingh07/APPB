@@ -1,52 +1,80 @@
 Contact Info:
-- Email: pahwar@uwindsor.ca
+- Email: luthraj@uwindsor.ca
 
 Intro Info:
-- Name: Rishabh Pahwa
-- Status: Senior Software Engineer
+- Name: Jaskaran Singh Luthra
+- Status: Master of Applied Computing - Artificial Intelligence student
 
 About Info:
-- First Paragraph: With over 3 years of experience in SAP ERP projects for esteemed clients such as Airbus, I am a skilled and adaptable software engineer. I specialize in Agile environments and have a strong ability to deliver software design, testing, and development solutions. My experience extends to a variety of technologies, including Android App development, Web development, Machine Learning, Linux administration, and Bash Scripting.
-- Second Paragraph: I am known for my excellent communication and teamwork skills, which have been honed through my collaboration with clients, colleagues, and project team members. I am driven by a passion for driving innovation and enhancing business performance through comprehensive software solutions.
+- First Paragraph: Experienced and highly skilled Associate Consultant with a strong background in Python, NLP, and data analysis. Proven track record of developing innovative solutions to optimize business processes and drive productivity. Skilled in creating frameworks, automating tasks, and delivering compelling presentations. Passionate about leveraging artificial intelligence and machine learning to solve complex problems and improve efficiency.
+- Second Paragraph: Committed to continuous learning and professional growth, I am currently pursuing a Master of Applied Computing - Artificial Intelligence degree at the University of Windsor. I have a strong academic background in data science and machine learning, with practical experience in working on projects that involve recommendation systems, data analysis, and predictive modeling.
 
-Summary: Skilled and adaptable software engineer with over 3 years of experience in SAP ERP projects, specializing in Agile environments and delivering software design, testing, and development solutions.
+LinkedIn: linkedin.com/in/jaskaran-singh-luthra-387a65171/
+Github: github.com/jksingh07
+Email: luthraj@uwindsor.ca
+
+Summary: Highly skilled Associate Consultant and aspiring AI professional with a passion for leveraging technology to optimize business processes and drive productivity.
 
 Company:
-- Name: Sopra Steria
-- Position: Senior Software Engineer
-- Duration: Aug 2019 - Aug 2022
-- Description: Managed a critical project for Airbus for nearly 3 years as the technical owner, developing and maintaining an SAP WebDynpro based portal for seamless technical data submission by the client's part suppliers. Mentored and trained a team of 3 junior software engineers, improving their understanding of the technology stack and best practices. Demonstrated strong reliability in addressing production incidents and change requests while maintaining in-depth functional knowledge of the application and technical expertise in key areas.
+- Name: Wipro Limited
+- Position: Associate Consultant and Project Engineer
+- Duration: Aug 2021 - Aug 2022
+- Description: Designed frameworks, including a Resume Parser, to optimize application tracking systems and improve efficiency. Developed an internal portal that utilized data analysis of employee skillsets to identify skill gaps and recommend targeted training programs, resulting in a 25% increase in employee productivity. Automated repetitive tasks for Human Resource teams using SAP iRPA, reducing hiring time by 40% and workload by 50%, while also creating intuitive dashboards and delivering presentations with strong storytelling skills.
 
 Project Heading:
-- Title: ZeroWaste
-- Project Description: Collaborated with a team of 8 students to create and present a solution addressing common challenges in household waste management, including forgetfulness, e-waste recycling, kitchen waste disposal, automation, and mis-recycling.
-- Technologies: HTML, CSS, JavaScript, Angular, MongoDB, Docker
+- Title: Change Data Capture (CDC)
+- Project Description: Implemented a change data capture system for replicating ongoing database changes to another storage. Contributed to the development of the CDC system by designing a detailed architecture encompassing data flow, data transformation, and data storage, ensuring scalability, flexibility, and robustness.
+- Technologies: Python, Apache Spark, MySQL, AWS (Lambda Glue, S3, DMS, RDS, IAM)
 
 Skills:
-- Java
+- Python (Advance)
 - C
 - C++
-- ABAP
-- JavaScript
-- Python
-- Bash Scripting
-- Linux
-- macOS
-- Windows
+- Spark
+- Bash
+- TensorFlow
+- Keras
+- PyTorch
+- Big Data
+- OpenCV
+- NLP (NLTK, Word2Vec, BERT, Spacy)
+- Deep Learning
+- Neural Networks
+- LSTM
+- Data Mining
+- Data Cleaning
+- Transformers
+- Autoencoders
+- Statistical Analysis
+- TABLEAU
+- PowerBI
+- Matplotlib
+- Seaborn
+- Plotly
+- Panel
 - MySQL
-- Oracle SQL
-- MS-SQL Server
 - MongoDB
-- PowerPoint
-- Excel
-- MS Visio
-- Tableau
-- Git
-- Service Now
-- JIRA
-- Confluence
-- HP QC
-- Android Studio
+- PostgreSQL
+- MS-SQL
+- AWS-S3
+- PL/SQL
+- Apache Spark
+- Hadoop
+- Django
+- Flask
+- Streamlit
+- CI/CD pipeline
+- REST API
 - Docker
-- Jenkins
-- MS Office
+- Kubernetes
+- Selenium
+- GIT
+- Postman
+- JIRA
+- Slack
+- MS Office 365
+- Google Suite
+- Scrum
+- Agile
+- AWS
+- AZURE
