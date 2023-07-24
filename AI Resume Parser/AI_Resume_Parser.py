@@ -1,13 +1,7 @@
 import openai
 import json
-#from pdfminer.high_level import extract_text
 import re
 import PyPDF2
-
-
-##def extract_text_from_pdf(file_path):
-##    text = extract_text(file_path)
-##    return text
 
 
 def extract_text_from_pdf(file_path):
@@ -18,24 +12,22 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text()
         return text
 
-def extract_resume_details(input_text):
-    openai.api_key = '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'
 
-    prompt = '''
-    Extract the following details from the given resume JSON:
+def read_prompt_from_file(prompt_file):
+    with open(prompt_file, "r") as file:
+        return file.read().strip()
 
-    - Experiences (company, position, duration, description)
-    - Project Work (project_heading, project_desc)
-    - Contact Info (email)
-    - Intro Info (name, status)
-    - About Info (firstPara, secondPara)
-    - LinkedIn
-    - Github
-    - Email
-    - Contact Info
-    - Summary
-    - Skills
-    '''
+def read_api_key(api_key_file):
+    with open(api_key_file, "r") as file:
+        return file.read().strip()
+
+def resume_parser_openai(input_text):
+    prompt_file = "prompt.txt"
+    prompt = read_prompt_from_file(prompt_file)
+
+    api_key_file = "api_key.txt"
+    api_key = read_api_key(api_key_file)
+    openai.api_key = api_key
 
     messages = [
         {"role": "system", "content": prompt},
@@ -50,14 +42,19 @@ def extract_resume_details(input_text):
         stop=None
     )
 
-    return response['choices'][0]['message']['content']
+    output = response['choices'][0]['message']['content']
 
-def resume_parser(input_text):
-    output = extract_resume_details(input_text)
+    # Save the response in the 'response.txt' file
+    with open("response.txt", "w") as file:
+        file.write(output)
 
-    
+    return output
+
+
+def resume_parser_json(input):
+
     # Extract Experiences
-    experiences = re.findall(r'Company: (.+)\n\s+Position: (.+)\n\s+Duration: (.+)\n\s+Description:((?:.+\n)+)', output)
+    experiences = re.findall(r'Company:\n- Name: (.+)\n- Position: (.+)\n- Duration: (.+)\n- Description:((?:.+\n)+)', input)
     experiences_list = []
     for experience in experiences:
         company, position, duration, description = experience
@@ -70,7 +67,7 @@ def resume_parser(input_text):
         })
 
     # Extract Project Work
-    project_work = re.findall(r'Project Heading: (.+)\n\s+Project Description: (.+)\n\s+Technologies: (.+)\n', output)
+    project_work = re.findall(r'Project Heading:\n- Title: (.+)\n- Project Description: (.+)\n- Technologies: (.+)', input)
     project_work_list = []
     for project in project_work:
         project_heading, project_desc, technologies = project
@@ -85,51 +82,51 @@ def resume_parser(input_text):
 
     # Extract Contact Info
     try:
-        contact_info = re.findall(r'Contact Info:\n- Email: (.+)', output)[0]
+        contact_info = re.findall(r'Contact Info:\n- Email: (.+)', input)[0]
     except:
         contact_info = "",""
         
     # Extract Intro Info
     try:
-        intro_info = re.findall(r'Intro Info:\n- Name: (.+)\n- Status: (.+)', output)
+        intro_info = re.findall(r'Intro Info:\n- Name: (.+)\n- Status: (.+)', input)
         name, status = intro_info[0]
     except:
         name, status = "",""
         
     # Extract About Info
     try:
-        about_info = re.findall(r'About Info:\n- First Paragraph: (.+)\n- Second Paragraph: (.+)', output)
+        about_info = re.findall(r'About Info:\n- First Paragraph: (.+)\n- Second Paragraph: (.+)', input)
         first_para, second_para = about_info[0]
     except:
         first_para, second_para = "",""
 
     # Extract LinkedIn
     try:
-        linkedin = re.findall(r'LinkedIn: (.+)', output)[0]
+        linkedin = re.findall(r'LinkedIn: (.+)', input)[0]
     except:
         linkedin = ""
 
     # Extract Github
     try:
-        github = re.findall(r'Github: (.+)', output)[0]
+        github = re.findall(r'Github: (.+)', input)[0]
     except:
         github = ""
 
     # Extract Email ID
     try:
-        email_id = re.findall(r'Email: (.+)', output)[0]
+        email_id = re.findall(r'Email: (.+)', input)[0]
     except:
         email_id = ""
 
     # Extract Summary
     try:
-        summary = re.search(r'Summary:\s+([\s\S]+?)\n\n', output).group(1)
+        summary = re.search(r'Summary:\s+([\s\S]+?)\n\n', input).group(1)
     except:
         summary = ""
         
     # Extract Skills
     try:
-        skills_text = re.search(r'Skills:\s+([\s\S]+)', output).group(1)
+        skills_text = re.search(r'Skills:\s+([\s\S]+)', input).group(1)
         skills = re.findall(r'- (.+)', skills_text)
     except:
         skills = ""
@@ -142,11 +139,11 @@ def resume_parser(input_text):
 
     # Extract footerData
     footer_data = {
-        "gitUrl": "https://github.com/iamsahilsoni/SahilSoniWebPortfolio2023",
-        "creditContent": "Design Motivation from Brittany Chiang",
-        "creditUrl": "https://brittanychiang.com/",
-        "selfCreditContent": "Built by <strong>Sahil Soni</strong>",
-        "gitRepo": "iamsahilsoni/SahilSoniWebPortfolio2023"
+        "gitUrl": "https://github.com/r1shabhpahwa/ResumeParserOpenAI",
+        "creditContent": "UWindsor - School of Computer Science",
+        "creditUrl": "https://uwindsor.ca/",
+        "selfCreditContent": "Built by <strong>Group 28</strong>",
+        "gitRepo": "r1shabhpahwa/ResumeParserOpenAI"
     }
 
 
@@ -188,8 +185,9 @@ def resume_parser(input_text):
 
 
 if __name__ == '__main__':
-    input_text = extract_text_from_pdf('resume_jk.pdf')
-    json_output = resume_parser(input_text)
+    input_text = extract_text_from_pdf('resume.pdf')
+    response = resume_parser_openai(input_text)
+    json_output = resume_parser_json(response)
     print(json_output)
     with open("data.json", "w") as outfile:
         outfile.write(json_output)

@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify
-import json
-import PyPDF2
 from AI_Resume_Parser import *
 from flask_cors import CORS, cross_origin
 
@@ -19,29 +17,18 @@ def parse_resume():
         return jsonify({'error': 'No file found in the request'}), 400
 
     file = request.files['file']
-##    print(file)
     file.save('resume_new.pdf')
+
     # Read the contents of the file
     file_contents = file.read()
-
-##    print(file_contents)
     
     # Check if the file is a PDF
     if file.filename.endswith('.pdf'):
         try:
-            # Read the PDF file and extract text
-##            pdf_reader = PyPDF2.PdfReader(file)
-##            text = ""
-##            for page in pdf_reader.pages:
-##                text += page.extract_text()
-
             input_text = extract_text_from_pdf('resume_new.pdf')
 
             # Process the extracted text and generate the JSON output
-            json_output = resume_parser(input_text)
-            
-            # Replace the following example code with your actual processing logic
-##            json_output = {'text': text}
+            json_output = resume_parser_json(input_text)
             
             return jsonify(json_output), 200
         except Exception as e:
